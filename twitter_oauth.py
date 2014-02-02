@@ -28,24 +28,24 @@ import urlparse
 
 
 # Tiwtter Api URL
-_UPDATE_URL = 'http://api.twitter.com/1.1/statuses/update.json'
-_FRIENDS_TIMELINE_URL = 'http://api.twitter.com/1.1/statuses/friends_timeline.json'
-_USER_TIMELINE_URL = 'http://api.twitter.com/1.1/statuses/user_timeline.json'
-_REPLIES_URL = 'http://api.twitter.com/1.1/statuses/replies.json'
-_SHOW_STATUS_URL = 'http://api.twitter.com/1.1/statuses/show/%s.json'
-_DESTROY_URL = 'http://api.twitter.com/1.1/statuses/destroy/%s.json'
-_LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.json'
-_CREATE_FRIENDSHIP_URL = 'http://api.twitter.com/1.1/friendships/create/%s.json'
-_DESTROY_FRIENDSHIP_URL = 'http://api.twitter.com/1.1/friendships/destroy/%s.json'
-_SEARCH_USER_URL = 'http://api.twitter.com/1.1/users/search.json'
-_SHOW_USER_URL = 'http://api.twitter.com/1.1/users/show/%s.json'
-_SEARCH_URL = 'http://search.twitter.com/search.json'
+_UPDATE_URL = 'https://api.twitter.com/1.1/statuses/update.json'
+_FRIENDS_TIMELINE_URL = 'https://api.twitter.com/1.1/statuses/friends_timeline.json'
+_USER_TIMELINE_URL = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
+_REPLIES_URL = 'https://api.twitter.com/1.1/statuses/replies.json'
+_SHOW_STATUS_URL = 'https://api.twitter.com/1.1/statuses/show/%s.json'
+_DESTROY_URL = 'https://api.twitter.com/1.1/statuses/destroy/%s.json'
+_LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.json'
+_CREATE_FRIENDSHIP_URL = 'https://api.twitter.com/1.1/friendships/create/%s.json'
+_DESTROY_FRIENDSHIP_URL = 'https://api.twitter.com/1.1/friendships/destroy/%s.json'
+_SEARCH_USER_URL = 'https://api.twitter.com/1.1/users/search.json'
+_SHOW_USER_URL = 'https://api.twitter.com/1.1/users/show/%s.json'
+_SEARCH_URL = 'https://api.twitter.com/1.1/search/tweets.json'
 
 
 # these constants are used in the GetOuath class.
-_REQUEST_TOKEN_URL = 'http://twitter.com/oauth/request_token'
-_ACCESS_TOKEN_URL = 'http://twitter.com/oauth/access_token'
-_AUTHORIZE_URL = 'http://twitter.com/oauth/authorize'
+_REQUEST_TOKEN_URL = 'https://twitter.com/oauth/request_token'
+_ACCESS_TOKEN_URL = 'https://twitter.com/oauth/access_token'
+_AUTHORIZE_URL = 'https://twitter.com/oauth/authorize'
 
 
 
@@ -657,7 +657,7 @@ class Api:
     you cat get these keys to register your application to Twitter.
     You cat register your application at next URL.
 
-    http://twitter.com/apps
+    https://dev.twitter.com/apps
 
 
 
@@ -685,7 +685,7 @@ class Api:
         - oauth_token        = ***
         - oauth_token_secret = ***
       Go to the following link in your browser
-      http://twitter.com/oauth/authorize?oauth_token=***
+      https://twitter.com/oauth/authorize?oauth_token=***
       
       What is the PIN? ***
       Access Token:
@@ -987,7 +987,7 @@ class Api:
 
         # create URL. append querry to a URL
         #
-        # _LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
+        # _LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
         param = '&'.join(url_param_list)
         if param:
             url = (_LIST_STATUS_URL % (user, list_id)) + '?' + param
@@ -1020,7 +1020,7 @@ class Api:
 
         # create URL. append querry to a URL
         #
-        # _LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
+        # _LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
         param = '&'.join(url_param_list)
         if param:
             url = (_CREATE_FRIENDSHIP_URL % id) + '?' + param
@@ -1052,7 +1052,7 @@ class Api:
 
         # create URL. append querry to a URL
         #
-        # _LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
+        # _LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
         param = '&'.join(url_param_list)
         if param:
             url = (_DESTROY_FRIENDSHIP_URL % id) + '?' + param
@@ -1087,7 +1087,7 @@ class Api:
 
         # create URL. append querry to a URL
         #
-        # _LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
+        # _LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
         param = urllib.urlencode(url_param_dict)
         if param:
             url = _SEARCH_USER_URL + '?' + param
@@ -1119,7 +1119,7 @@ class Api:
 
         # create URL. append querry to a URL
         #
-        # _LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
+        # _LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
         param = '&'.join(url_param_list)
         if param:
             url = (_SHOW_USER_URL % id) + '?' + param
@@ -1163,7 +1163,7 @@ class Api:
 
         # create URL. append querry to a URL
         #
-        # _LIST_STATUS_URL = 'http://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
+        # _LIST_STATUS_URL = 'https://api.twitter.com/1.1/%s/lists/%s/statuses.xml'
         param = urllib.urlencode(url_param_dict)
         if param:
             url = _SEARCH_URL + '?' + param
